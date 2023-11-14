@@ -1,0 +1,25 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  db:
+    image: "python:3.8-slim"
+    volumes:
+      - db_data:/var/db
+    environment:
+      - DJANGO_DB_HOST=db
+      - DJANGO_DB_PORT=5432
+      - DJANGO_DB_NAME=BASE_DIR
+      - DJANGO_DB_USER=marcos
+      - DJANGO_DB_PASSWORD=0204
+
+volumes:
+  db_data:
