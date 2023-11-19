@@ -50,11 +50,22 @@
 
 html {
     font-size: 62.5%;
+    width: 100%;
+    height: 100%;
+    display: table;
 }
 
 body {
     font-size: 1.6rem;
     font-family: var(--font-primary);
+    width: 100%;
+    display: table-cell;
+    overflow: auto;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
 h1,
@@ -70,6 +81,7 @@ h6 {
     max-width: 144rem;
     margin: 0 auto;
     padding: var(--spacing-gutter-medium);
+    height: 100% !important;
 }
 
 .main-header-container {
@@ -103,6 +115,9 @@ h6 {
 .m-15 {
     margin: 15px;
 }
+.mt-20 {
+    margin-top: 20px !important;
+}
 
 .button-style {
     padding: 10px;
@@ -117,4 +132,50 @@ h6 {
     font-size: x-large;
     list-style: arabic-indic;
     text-decoration: none;
+}
+
+.form-style {
+    margin-top: 35px !important;
+    background-color: #212529;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.style-options {
+    margin-top: 20px;
+    gap: 3em;
+}
+
+.style-label {
+    color: #fff;
+}
+
+.style-btn {
+    height: 40px !important;
+    width: 100px !important;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+}
+
+input {
+    height: 30px !important;
+    font-size: 1.3rem !important;
+    padding-left: 5px;
+}
+
+select {
+    height: 35px !important;
+    font-size: 1.3rem !important;
+}
+
+.pr-10 {
+    padding-right: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.mr-20 {
+    margin-right: 20px;
 }
