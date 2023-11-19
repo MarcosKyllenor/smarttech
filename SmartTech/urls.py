@@ -20,7 +20,7 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 from cadastro_fornecedores.views import cadastroFornecedor
-from cadastro_produtos.views import cadastroProduto, listarProdutos
+from cadastro_produtos.views import cadastroProduto, listarProdutos, form_cadastro_produto
 from django.shortcuts import render
 
 
@@ -32,8 +32,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('addfornecedor/', cadastroFornecedor),
     path('fornecedores/', cadastroFornecedor),
-    path('addproduto/', cadastroProduto),
+    path('addproduto/', cadastroProduto, name="cadastroProduto"),
     path('produtos/', listarProdutos),
+    path('form_cadastro_produto/', form_cadastro_produto, name="form_cadastro_produto"),
     path('', home),
 ]
 
