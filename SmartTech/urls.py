@@ -16,11 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.http import HttpResponse
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from cadastro_fornecedores.views import cadastroFornecedor
-from cadastro_produtos.views import cadastroProduto, listarProdutos, form_cadastro_produto
+from produtos.views import produtos, adicionar_produto, editar_produto, excluir_produto
 from django.shortcuts import render
 
 
@@ -32,9 +32,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('addfornecedor/', cadastroFornecedor),
     path('fornecedores/', cadastroFornecedor),
-    path('addproduto/', cadastroProduto, name="cadastroProduto"),
-    path('produtos/', listarProdutos),
-    path('form_cadastro_produto/', form_cadastro_produto, name="form_cadastro_produto"),
+    path('produtos', produtos, name="produtos"),
+    path('produtos/adicionar/', adicionar_produto, name="adicionar_produto"),
+    path('produtos/editar/<int:id>/', editar_produto, name="editar_produto"),
+    path('produtos/excluir/<int:id>/', excluir_produto, name="excluir_produto"),
     path('', home),
 ]
 
