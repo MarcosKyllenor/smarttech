@@ -32,7 +32,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('addfornecedor/', cadastroFornecedor),
     path('fornecedores/', cadastroFornecedor),
-    path('produtos', produtos, name="produtos"),
+    path('produtos/', produtos, name="produtos"),
     path('produtos/adicionar/', adicionar_produto, name="adicionar_produto"),
     path('produtos/editar/<int:id>/', editar_produto, name="editar_produto"),
     path('produtos/excluir/<int:id>/', excluir_produto, name="excluir_produto"),
