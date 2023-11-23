@@ -1,0 +1,58 @@
+{% include "partials/head.html" %}
+
+<body>
+    {% block content %}
+    <div class="container d-flex align-items-center justify-content-center">
+        <div class="col-12 row">
+            <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+                <form class="col-9 row g-3 form-style" action="{% url 'editar_fornecedor' fornecedor.id %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="col-12 d-flex align-items-center justify-content-center pr-10">
+                        <h1 class="titulo">Editar Fornecedor</h1>
+                    </div>
+                    <div class="col-7 d-flex align-items-center flex-column pr-10">
+                        <div class="col-12">
+                            {{ form.nome.errors }}
+                            <label for="{{ form.nome.id_for_label }}" class="form-label style-label mt-4">Nome</label>
+                            {{ form.nome }}
+                        </div>
+                        <div class="col-12">
+                            {{ form.documento.errors }}
+                            <label for="{{ form.documento.id_for_label }}" class="form-label style-label mt-4">Documento</label>
+                            {{ form.documento }}
+                        </div>
+                        <div class="col-12">
+                            {{ form.email.errors }}
+                            <label for="{{ form.email.id_for_label }}" class="form-label style-label mt-4">E-mail</label>
+                            {{ form.email }}
+                        </div>
+                        <div class="col-12">
+                            {{ form.endereco.errors }}
+                            <label for="{{ form.endereco.id_for_label }}" class="form-label style-label mt-4">Endereço</label>
+                            {{ form.endereco }}
+                        </div>
+                        <div class="col-12">
+                            {{ form.telefone.errors }}
+                            <label for="{{ form.telefone.id_for_label }}" class="form-label style-label mt-4">Telefone</label>
+                            {{ form.telefone }}
+                        </div>
+                    </div>
+                    <div class="col-5 d-flex align-items-center flex-column">
+                        <!-- Adicione aqui campos específicos do fornecedor, se houver -->
+                    </div>
+                    <div class="col-12 d-flex align-items-center justify-content-center">
+                        <div class="d-flex align-items-center justify-content-center style-options">
+                            <button type="submit" class="btn btn-success style-btn">Salvar</button>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center style-options">
+                            <a href="{% url 'fornecedores' %}">
+                                <button class="btn btn-danger style-btn">Cancelar</button>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+</body>
