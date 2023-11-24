@@ -1,0 +1,8 @@
+{% block title %}Inscreva-se{% endblock %}
+
+  <h2> Inscreva-se </h2> 
+  <form  method = "post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button  type = "submit"> Cadastre-se </button > 
+  </form >

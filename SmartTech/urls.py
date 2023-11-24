@@ -30,6 +30,7 @@ def home(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("accounts/", include("usuarios.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path('addfornecedor/', cadastroFornecedor),
     path('fornecedores/', cadastroFornecedor),
