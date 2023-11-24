@@ -1,6 +1,7 @@
 {% include "partials/head.html" %}
 
 <body>
+    {% if user.is_authenticated %}
     <header class="main-header-container">
         <div class="main-header container">
             <h1>
@@ -45,5 +46,9 @@
         </button>
         </div>
     </div>
+    {% else %}
+    <p>You are not logged in</p>
+    <a class="login_link" href="{% url 'login' %}">Log In</a>
+  {% endif %}
 </body>
 </html>

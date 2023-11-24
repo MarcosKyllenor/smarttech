@@ -113,6 +113,14 @@ h6 {
     padding: 100px;
 }
 
+.p-30 {
+    padding: 30px;
+}
+
+.btn-login {
+    
+}
+
 .button-style {
     padding: 10px;
     background-color: #13141f;
@@ -122,10 +130,14 @@ h6 {
 }
 
 .a-style {
-    color: #fff;
+    color: #ffffff;
     font-size: x-large;
     list-style: arabic-indic;
     text-decoration: none;
+}
+
+a.login_link {
+    color: blue;
 }
 
 .form-style {
@@ -154,6 +166,48 @@ input {
     height: 30px !important;
     font-size: 1em !important;
     padding-left: 5px;
+}
+
+input[name="username"] {
+    height: 30 !important;
+    font-size: 1em !important;
+    padding-left: 5px;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;    
+}
+
+input[name="password"] {
+    height: 30 !important;
+    font-size: 1em !important;
+    padding-left: 5px;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; 
 }
 
 textarea {
