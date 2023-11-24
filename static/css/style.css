@@ -146,6 +146,11 @@ a.login_link {
     padding: 20px;
 }
 
+.error-messages {
+    color: red; /* Change this to the desired color for error messages */
+    font-weight: bold; /* Optional: You can customize other styles as needed */
+}
+
 .style-options {
     margin-top: 20px;
     gap: 3em;
