@@ -177,10 +177,6 @@ h6 {
     font-size: x-large;
 }
 
-a.login_link {
-    color: blue;
-}
-
 .form-style {
     border-radius: 10px;
     padding: 20px;
@@ -518,16 +514,23 @@ ul.errorlist > li {
 }
 
 .block-acess-btn {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 40px;
     background-color: blue;
     border: none;
     cursor: pointer;
     border-radius: 1rem;
-    font-size: 0.8rem;
+    font-size: 15px;
+    font-weight: 600;
     margin-bottom: 2rem;
     transition: 0.3s;
+}
+
+.block-acess-btn:hover {
+    background-color: #17a2b8;
 }
 
 a.block-acess-btn{
