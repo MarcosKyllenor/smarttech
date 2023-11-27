@@ -2,54 +2,63 @@
 
 <body>
     {% if user.is_authenticated %}
-    <header class="main-header-container">
-        <div class="main-header container">
-            <h1>
-                <a class="main-logo" href="/">
-                    <i class="fas fa-thin fa-laptop"></i>
-                    <span class="main-logo-text">Smart Tech</span>
-                </a>
-            </h1>
+        <div class="main-header-container h-100">
+            <div class="d-flex align-items-center justify-content-center flex-column h-100">
+                <div class="main-header h-20">
+                    <a class="main-logo a-home a-effect" href="/">
+                        <i class="fas fa-thin fa-laptop"></i>
+                        <p class="main-logo-text">Smart Tech</p>
+                    </a>
+                </div>
+                <div class="col-12 d-flex align-items-center justify-content-center flex-wrap h-80">
+                    <div class="col-6 mb-50">
+                        <div class="col-12 main-logo d-flex align-items-center justify-content-end">
+                            <a class="col-6 a-home a-effect" href="addfornecedor">
+                                <i class="fas fa-address-book icon-home"></i>
+                                <p class="p-home">Cadastro de Fornecedores</p>
+                            </a>
+                        </div>
+                        <div class="col-12 main-logo d-flex align-items-center justify-content-end">
+                            <a class="col-6 a-home a-effect" href="produtos/adicionar">
+                                <i class="fas fa-address-book icon-home"></i>
+                                <p class="p-home">Cadastro de Produtos</p>
+                            </a>
+                        </div>
+                        <div class="col-12 main-logo d-flex align-items-center justify-content-end">
+                            <a class="col-6 a-home a-effect" href="produtos/adicionar">
+                                <i class="fas fa-address-book icon-home"></i>
+                                <p class="p-home">Cadastro de usuários</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-50">
+                        <div class="col-12 main-logo d-flex align-items-center justify-content-start">
+                            <a class="col-6 a-home a-effect" href="fornecedores">
+                                <i class="fa fa-list icon-home"></i>
+                                <p class="p-home">Lista de Fornecedores</p>
+                            </a>
+                        </div>
+                        <div class="col-12 main-logo d-flex align-items-center justify-content-start">
+                            <a class="col-6 a-home a-effect" href="produtos">
+                                <i class="fa fa-list icon-home"></i>
+                                <p class="p-home">Lista de Produtos</p>
+                            </a>
+                        </div>
+                        <div class="col-12 main-logo d-flex align-items-center justify-content-start">
+                            <a class="col-6 a-home a-effect" href="{% url 'logout' %}">
+                                <i class="fa fa-arrow-right fz-26"></i>
+                                <p class="p-home">Sair</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
-    <div class="align-center">
-        <div class="main-logo">
-            <button class="button-style">
-            <a class="m-15 a-style" href="addfornecedor">
-                <i class="fas fa-address-book"></i>
-                <span>Cadastro de Fornecedores</span>
-            </a>
-            </button>
-        </div>
-        <div class="main-logo">
-            <button class="button-style">
-            <a class="m-15 a-style" href="produtos/adicionar">
-                <i class="fas fa-address-book"></i>
-                <span>Cadastro de Produtos</span>
-            </a>
-            </button>
-        </div>
-        <div class="main-logo">
-            <button class="button-style">
-            <a class="m-15 a-style" href="fornecedores">
-                <i class="fas fa-address-book"></i>
-                <span>Lista de Fornecedores</span>
-            </a>
-        </button>
-        </div>
-        <div class="main-logo">
-            <button class="button-style">
-            <a class="m-15 a-style" href="produtos">
-                <i class="fas fa-address-book"></i>
-                <span>Lista de Produtos</span>
-            </a>
-        </button>
-        </div>
-        <p><a class="login_link" href="{% url 'logout' %}">Log Out</a></p>
-    </div>
     {% else %}
-    <p>You are not logged in</p>
-    <a class="login_link" href="{% url 'login' %}">Log In</a>
-  {% endif %}
+        {% comment %} <p>You are not logged in</p>
+        <a class="login_link" href="{% url 'login' %}">Log In</a> {% endcomment %}
+        <script>
+            window.location.href = "{% url 'login' %}";
+        </script>
+    {% endif %}
 </body>
-</html>

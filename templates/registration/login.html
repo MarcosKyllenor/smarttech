@@ -1,34 +1,30 @@
 {% include 'partials/head.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container d-flex align-items-center justify-content-center">
-    <form class="col-9 row g-3 form-style" method="post">
-      {% csrf_token %}
-      <div class="col-12 d-flex align-items-center justify-content-center pr-10">
-        <h1 class="titulo">Login</h1>
-      </div>
-      <div class="align-center p-30">
-        <div class="form-group col-6 mt-20">
-        <p style="color: white; font-weight: bold;">{{ form.error_messages }}</p>
-        </div>
-        <div class="form-group col-6">
-          <label class="titulo">Username:</label>
-          {{ form.username }}
-        </div>
-        <div class="form-group col-6 mt-20">
-          <label class="titulo">Password:</label>
-          {{ form.password }}
-        </div>
-        <button class="btn btn-success col-3 mt-20" type="submit">Log In</button>
-      </div>
+<div class="main-header-container h-100">
+    <div class="col-12 d-flex flex-column justify-content-center align-items-center h-100">
+        <form class="col-9 row g-3 form-style" method="post">
+            {% csrf_token %}
+            <div class="col-12 d-flex align-items-center justify-content-center pr-10">
+                <h1 class="titulo">Login</h1>
+            </div>
+            <div class="col-12 align-center p-30">
+                <div class="form-group col-7 mt-20">
+                    <p class="message-login">{{ form.error_messages }}</p>
+                </div>
+                <div class="form-group col-7">
+                    <label class="titulo">Usuário</label>
+                    {{ form.username }}
+                </div>
+                <div class="form-group col-7 mt-20">
+                    <label class="titulo">Senha</label>
+                    {{ form.password }}
+                </div>
+                <button class="col-7 btn-login btn btn-success mt-30" type="submit">Entrar</button>
+                <div class="col-7 d-flex align-items-center justify-content-start mt-20">
+                    <p class="message-account">Ainda não possui conta ?</p>
+                    <a class="a-effect color-account" href="{% url 'signup' %}" >Crie uma agora</a>
+                </div>
+            </div>
+        </form>
     </div>
-    </form>
-  </body>
-</html>
+</div>

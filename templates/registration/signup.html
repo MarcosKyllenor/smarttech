@@ -1,8 +1,18 @@
-{% block title %}Inscreva-se{% endblock %}
+{% include 'partials/head.html' %}
 
-  <h2> Inscreva-se </h2> 
-  <form  method = "post">
-    {%csrf_token%}
-    {{form.as_p}}
-    <button  type = "submit"> Cadastre-se </button > 
-  </form >
+<div class="main-header-container h-100">
+    <div class="container d-flex align-items-center justify-content-center h-100">
+        <form class="col-9 row g-3 form-style" method="post">
+            {% csrf_token %}
+            <div class="col-12 d-flex align-items-center justify-content-center pr-10">
+                <h1 class="titulo">Cadastrar usuário</h1>
+            </div>
+            <div class="col-12 align-center p-30">
+                <div class="col-7">
+                    {{ form.as_p }}
+                    <button class="col-12 btn-login btn btn-success mt-30" type="submit">Cadastre-se</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

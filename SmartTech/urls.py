@@ -15,10 +15,10 @@ from django.shortcuts import render
 def home(request):
     return render(request, "pages/home.html")
 
-
 urlpatterns = [
-<<<<<<< HEAD
-    path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
+    path("accounts/", include("usuarios.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
     path("addfornecedor/", adicionar_fornecedor, name="adicionar_fornecedor"),
     path("fornecedores/", fornecedores, name="fornecedores"),
     path("fornecedores/adicionar/", adicionar_fornecedor, name="adicionar_fornecedor"),
@@ -31,18 +31,6 @@ urlpatterns = [
     path("produtos/editar/<int:id>/", editar_produto, name="editar_produto"),
     path("produtos/excluir/<int:id>/", excluir_produto, name="excluir_produto"),
     path("", home),
-=======
-    path('admin/', admin.site.urls),
-    path("accounts/", include("usuarios.urls")),
-    path("accounts/", include("django.contrib.auth.urls")),
-    path('addfornecedor/', cadastroFornecedor),
-    path('fornecedores/', cadastroFornecedor),
-    path('produtos/', produtos, name="produtos"),
-    path('produtos/adicionar/', adicionar_produto, name="adicionar_produto"),
-    path('produtos/editar/<int:id>/', editar_produto, name="editar_produto"),
-    path('produtos/excluir/<int:id>/', excluir_produto, name="excluir_produto"),
-    path('', home),
->>>>>>> tela_login_final
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
