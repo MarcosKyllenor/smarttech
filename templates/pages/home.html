@@ -55,10 +55,24 @@
             </div>
         </div>
     {% else %}
-        {% comment %} <p>You are not logged in</p>
-        <a class="login_link" href="{% url 'login' %}">Log In</a> {% endcomment %}
-        <script>
-            window.location.href = "{% url 'login' %}";
-        </script>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-7 d-flex align-items-center justify-content-center" style="height: 100vh;">
+                    <img src="static/imagens/acessobloqueado.jpg" class="img-fluid" alt="bloqueado">
+                </div>
+                <div class="col-md-4 d-flex align-items-center justify-content-center" style="height: 100vh;">
+                    <div>
+                        <h1 class="text-center font-weight-bold mb-0 custom-large-text">Acesso Bloqueado</h1>
+                        <br>
+                        <p class="text-center mt-2 custom-text">Realize o login para acesar <br>o sistema!</p>
+                        <div class="container d-flex justify-content-center">
+                            <button class="block-acess-btn">
+                                <a class="login_link block-acess-btn" href="/accounts/login/">Login</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     {% endif %}
 </body>

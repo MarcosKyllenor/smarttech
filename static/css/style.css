@@ -512,3 +512,24 @@ ul.errorlist > li {
     font-weight: 600;
     font-size: 20px;
 }
+
+.custom-large-text {
+    font-size: 1.5em; /* Tamanho de fonte personalizado */
+}
+
+.block-acess-btn {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    background-color: blue;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+}
+
+a.block-acess-btn{
+    color: white;
+}
