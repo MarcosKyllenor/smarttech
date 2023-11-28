@@ -1,0 +1,60 @@
+{% include "partials/head.html" %}
+
+<body>
+    {% if user.is_authenticated %}
+        <div class="main-header-container h-100">
+            <div class="d-flex align-items-center justify-content-center flex-column h-100">
+                <div class="main-header h-20">
+                    <a class="main-logo a-home a-effect" href="/">
+                        <i class="fas fa-thin fa-laptop"></i>
+                        <p class="main-logo-text">Smart Tech</p>
+                    </a>
+                </div>
+                <div class="col-12 d-flex align-items-center justify-content-center flex-wrap h-80">
+                    <div class="col-6 mb-50">
+                        <div class="col-12 main-logo d-flex align-items-center justify-content-end">
+                            <a class="col-6 a-home a-effect" href="fornecedores/adicionar">
+                                <i class="fas fa-address-book icon-home"></i>
+                                <p class="p-home">Cadastro de Fornecedores</p>
+                            </a>
+                        </div>
+                        <div class="col-12 main-logo d-flex align-items-center justify-content-end">
+                            <a class="col-6 a-home a-effect" href="produtos/adicionar">
+                                <i class="fas fa-address-book icon-home"></i>
+                                <p class="p-home">Cadastro de Produtos</p>
+                            </a>
+                        </div>
+                        <div class="col-12 main-logo d-flex align-items-center justify-content-end">
+                            <a class="col-6 a-home a-effect" href="produtos/adicionar">
+                                <i class="fas fa-address-book icon-home"></i>
+                                <p class="p-home">Cadastro de usuários</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-50">
+                        <div class="col-12 main-logo d-flex align-items-center justify-content-start">
+                            <a class="col-6 a-home a-effect" href="fornecedores">
+                                <i class="fa fa-list icon-home"></i>
+                                <p class="p-home">Lista de Fornecedores</p>
+                            </a>
+                        </div>
+                        <div class="col-12 main-logo d-flex align-items-center justify-content-start">
+                            <a class="col-6 a-home a-effect" href="produtos">
+                                <i class="fa fa-list icon-home"></i>
+                                <p class="p-home">Lista de Produtos</p>
+                            </a>
+                        </div>
+                        <div class="col-12 main-logo d-flex align-items-center justify-content-start">
+                            <a class="col-6 a-home a-effect" href="{% url 'logout' %}">
+                                <i class="fa fa-arrow-right fz-26"></i>
+                                <p class="p-home">Sair</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {% include "partials/acesso_negado.html" %}
+    {% endif %}
+</body>

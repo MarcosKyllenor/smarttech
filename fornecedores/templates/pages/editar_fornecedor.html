@@ -1,0 +1,58 @@
+{% load static %}
+
+{% include "partials/head.html" %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% include "partials/navbar.html" %}
+        <div class="main-header-container h-90">
+            <div class="col-12 d-flex justify-content-center align-items-center h-100">
+                <form class="col-12 col-md-6 row g-3 form-style" action="{% url 'editar_fornecedor' fornecedor.id %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="col-12 d-flex align-items-center justify-content-center pr-10">
+                        <h1 class="titulo">Editar Fornecedor</h1>
+                    </div>
+                    <div class="col-12 col-md-10 d-flex flex-column align-items-center justify-content-center">
+                        <div class="col-12">
+                            {{ form.nome.errors }}
+                            <label for="{{ form.nome.id_for_label }}" class="form-label style-label mt-4">Nome</label>
+                            {{ form.nome }}
+                        </div>
+                        <div class="col-12">
+                            {{ form.documento.errors }}
+                            <label for="{{ form.documento.id_for_label }}" class="form-label style-label mt-4">Documento</label>
+                            {{ form.documento }}
+                        </div>
+                        <div class="col-12">
+                            {{ form.email.errors }}
+                            <label for="{{ form.email.id_for_label }}" class="form-label style-label mt-4">E-mail</label>
+                            {{ form.email }}
+                        </div>
+                        <div class="col-12">
+                            {{ form.endereco.errors }}
+                            <label for="{{ form.endereco.id_for_label }}" class="form-label style-label mt-4">Endereço</label>
+                            {{ form.endereco }}
+                        </div>
+                        <div class="col-12">
+                            {{ form.telefone.errors }}
+                            <label for="{{ form.telefone.id_for_label }}" class="form-label style-label mt-4">Telefone</label>
+                            {{ form.telefone }}
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex align-items-center justify-content-center">
+                        <div class="d-flex align-items-center justify-content-center style-options">
+                            <button type="submit" class="btn btn-success style-btn">Salvar</button>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center style-options">
+                            <a href="{% url 'fornecedores' %}">
+                                <button class="btn btn-danger style-btn">Cancelar</button>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% else %}
+        {% include "partials/acesso_negado.html" %}
+    {% endif %}
+{% endblock content %}
